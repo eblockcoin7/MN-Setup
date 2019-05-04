@@ -6,7 +6,7 @@ CONFIGFOLDER='/root/.eblockcoin'
 COIN_DAEMON='eblockcoind'
 COIN_CLI='eblockcoin-cli'
 COIN_PATH='/usr/local/bin/'
-COIN_TGZ='https://github.com/eblockcoin7/eBlockCoin/files/2768444/eBlockCoin-.Daemon-Ubuntu-16.04.tar.gz'
+COIN_TGZ='https://github.com/eblockcoin7/eBlockCoin/releases/download/v1.1.0.0/eBlockCoin-1.1.0.0-daemon_ubuntu_16.04.tar.gz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 COIN_NAME='eBlockCoin'
 COIN_PORT=11118
@@ -47,7 +47,7 @@ function download_node() {
   echo -e "${GREEN}Downloading and Installing VPS $COIN_NAME Daemon${NC}"
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
-  tar xzvf eBlockCoin-.Daemon-Ubuntu-16.04.tar.gz
+  tar xzvf eBlockCoin-1.1.0.0-daemon_ubuntu_16.04.tar.gz
   cd rev >/dev/null 2>&1
   chmod +x $COIN_DAEMON $COIN_CLI
   cp $COIN_DAEMON $COIN_CLI $COIN_PATH
